@@ -1,0 +1,33 @@
+/* style.css */
+
+/* Optional: Custom font */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Custom Heading */
+h1 {
+  letter-spacing: 1px;
+}
+
+/* Smooth transition for form elements */
+input, select, button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Button hover effect override if you want extra styling */
+button:hover {
+  transform: scale(1.03);
+}
+
+/* Result box style (optional override) */
+#result {
+  border-left: 4px solid #3b82f6; /* Tailwind blue-500 */
+}
+
+/* Responsive tweak if needed */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+}
