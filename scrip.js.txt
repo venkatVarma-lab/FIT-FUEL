@@ -1,0 +1,32 @@
+document.getElementById('fitness-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const goal = document.getElementById('goal').value;
+  const age = parseInt(document.getElementById('age').value);
+  const weight = parseFloat(document.getElementById('weight').value);
+  const resultDiv = document.getElementById('result');
+
+  if (!goal || isNaN(age) || isNaN(weight)) {
+    resultDiv.innerHTML = `<p class="text-red-500">Please fill out all fields.</p>`;
+    resultDiv.classList.remove('hidden');
+    return;
+  }
+
+  let calories, protein;
+
+  if (goal === 'lean') {
+    calories = weight * 24 * 1.2 - 500;
+    protein = weight * 2;
+  } else if (goal === 'bulk') {
+    calories = weight * 24 * 1.2 + 500;
+    protein = weight * 2.2;
+  }
+
+  resultDiv.innerHTML = `
+    <h2 class="text-xl font-semibold mb-2">Your ${goal.toUpperCase()} Diet Plan</h2>
+    <p>Estimated Daily Calories: <strong>${Math.round(calories)}</strong></p>
+    <p>Recommended Protein Intake: <strong>${Math.round(protein)}g</strong></p>
+    <p class="mt-2 text-sm text-gray-600">Note: This is a basic estimation. For best results, consult a nutritionist.</p>
+  `;
+  resultDiv.classList.remove('hidden');
+});

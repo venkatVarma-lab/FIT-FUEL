@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FIT-FUEL</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+
+  <div class="max-w-xl mx-auto p-6">
+    <h1 class="text-4xl font-bold text-center mb-6">FIT-FUEL</h1>
+
+    <form id="fitness-form" class="bg-white p-6 rounded shadow">
+      <label class="block mb-2 font-semibold">Your Fitness Goal:</label>
+      <select id="goal" class="w-full mb-4 p-2 border rounded">
+        <option value="">-- Select --</option>
+        <option value="lean">LEAN</option>
+        <option value="bulk">BULK</option>
+      </select>
+
+      <label class="block mb-2 font-semibold">Your Age:</label>
+      <input type="number" id="age" class="w-full mb-4 p-2 border rounded" />
+
+      <label class="block mb-2 font-semibold">Your Weight (kg):</label>
+      <input type="number" id="weight" class="w-full mb-4 p-2 border rounded" />
+
+      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Get Plan</button>
+    </form>
+
+    <div id="result" class="mt-6 bg-white p-4 rounded shadow hidden"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
